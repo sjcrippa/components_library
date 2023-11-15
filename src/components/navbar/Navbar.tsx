@@ -1,12 +1,34 @@
+import Link from "next/link"
+
 export default function Navbar() {
+  const links = [
+    { name: 'Documentation', href: '/docs' },
+    { name: 'Components', href: '/docs/components' },
+    { name: 'About', href: '/about' }
+  ]
   return (
-    <nav className="text-light w-full flex gap-5 py-5">
-      <h1 className="">LOGO</h1>
-      <ul className="flex gap-3">
-        <li>item</li>
-        <li>item</li>
-        <li>item</li>
-      </ul>
-    </nav>
+    <>
+      <div className="w-full flex items-center gap-10 py-7">
+        <Link
+          href='/'
+          className="text-2xl text-light font-bold">
+          LOGO
+        </Link>
+        <ul className="text-light flex gap-5">
+
+          {links.map((link) => {
+            return (
+              <Link
+                key={link.name}
+                href={link.href}
+                className="text-light text-sm"
+              >
+                <p>{link.name}</p>
+              </Link>
+            )
+          })}
+        </ul>
+      </div>
+    </>
   )
 }
