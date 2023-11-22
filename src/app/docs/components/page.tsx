@@ -1,7 +1,9 @@
 export default function ComponentsPage() {
   return (
-    <div className="text-light">
-      Components section
-    </div>
+    <>
+      <main className="text-light">
+        Components section
+      </main>
+    </>
   )
 }
