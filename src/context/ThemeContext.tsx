@@ -7,6 +7,7 @@ import { ThemeTypes } from '@/types/themeTypes'
 interface ThemeContextProps {
   theme: ThemeTypes;
   toggleTheme: () => void;
+  setTheme: any;
 }
 
 export const ThemeContext = createContext<ThemeContextProps | undefined>(undefined)
@@ -28,21 +29,24 @@ export const ThemeProvider = ({ children }: any) => {
   }
 
   // guardando el tema en el storage:
-  /* useEffect(() => {
+  useEffect(() => {
     const savedTheme = localStorage.getItem('theme');
     if (savedTheme && (savedTheme === 'smooth' || savedTheme === 'future')) {
       setTheme(savedTheme);
     }
-  }, []); */
+  }, []);
 
   const contextValue: ThemeContextProps = {
     theme,
     toggleTheme,
+    setTheme
   };
 
   return (
     <ThemeContext.Provider value={contextValue}>
-      <div className={`theme ${theme}`}>{children}</div>
+      <div className={`theme ${theme}`}>
+        {children}
+      </div>
     </ThemeContext.Provider>
   );
 }
