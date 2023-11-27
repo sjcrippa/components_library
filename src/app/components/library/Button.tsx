@@ -1,6 +1,7 @@
 'use client'
 
 import { useTheme } from "@/context/ThemeContext"
+import '../../globals.css'
 
 export default function ButtonComp() {
   const { theme, toggleTheme } = useTheme()
@@ -14,7 +15,7 @@ export default function ButtonComp() {
         </button>
         <div className="flex justify-center mt-36">
           <button
-            className={`theme ${theme === 'smooth' ? 'smooth' : 'future'} p-3 border border-primary rounded transition-all`}
+            className={`${theme === 'smooth' ? 'smooth' : 'future'} p-3 border border-primary rounded transition-all`}
           >
             Button
           </button>
