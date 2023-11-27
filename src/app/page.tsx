@@ -1,4 +1,4 @@
-import ButtonComp from "./components/library/Button";
+import ButtonComp from "./components/library/button/Button";
 
 export default function Home() {
   return (

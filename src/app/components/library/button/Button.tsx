@@ -1,13 +1,13 @@
 'use client'
 
 import { useTheme } from "@/context/ThemeContext"
-import '../../globals.css'
+import styles from './Button.module.css'
 
 export default function ButtonComp() {
   const { theme, toggleTheme } = useTheme()
   console.log('Tema actual:', theme)
 
-  const getButtonStyles = (selectedTheme: string) => {
+  /* const getButtonStyles = (selectedTheme: string) => {
     let buttonStyle = {
       padding: '0.75rem',
       border: '1px solid #000',
@@ -26,7 +26,7 @@ export default function ButtonComp() {
     return buttonStyle;
   };
 
-  const buttonStyles = getButtonStyles(theme);
+  const buttonStyles = getButtonStyles(theme); */
 
   return (
     <>
@@ -35,7 +35,7 @@ export default function ButtonComp() {
           <span>Style: {theme}</span>
         </button>
         <div className="flex justify-center mt-36">
-          <button style={buttonStyles}>
+          <button className={`${styles.button} ${theme === 'smooth' ? styles.smooth : styles.future}`}>
             Button
           </button>
         </div>

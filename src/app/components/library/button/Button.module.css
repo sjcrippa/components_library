@@ -1,0 +1,12 @@
+.button {
+  padding: 1rem;
+  border: 1px solid #000;
+  border-radius: 0.25rem;
+  transition: all 1s ease;
+}
+.smooth{
+  background-color: red;
+}
+.future{
+  background-color: blue;
+} 

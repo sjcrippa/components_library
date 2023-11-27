@@ -25,7 +25,7 @@ export const ThemeProvider = ({ children }: any) => {
   const [theme, setTheme] = useState<ThemeTypes>('smooth')
 
   const toggleTheme = () => {
-    setTheme((prevTheme) => (prevTheme === 'smooth' ? 'future' : 'smooth'))
+    setTheme((prevTheme) => (prevTheme ===  'smooth' ? 'future' : 'smooth'))
   }
 
   // guardando el tema en el storage:
@@ -44,7 +44,9 @@ export const ThemeProvider = ({ children }: any) => {
 
   return (
     <ThemeContext.Provider value={contextValue}>
-      {children}
+      <div className={`theme ${theme}`}>
+        {children}
+      </div>
     </ThemeContext.Provider>
   );
 }
